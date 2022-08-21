@@ -16,9 +16,27 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
         if(auth()->attempt($validated)){
-            session()->regenerate();
-            redirect('/')->with('success',' user logged in');;
+            return response()->json([
+                'statusCode'=> 200,
+                'message'=> 'Logged in successfully',
+                'data' => [
+                    'name' => auth()->$validated->name,
+                ]
+                ]
+            );
         }
     }
+    public function test(){
+
+        return response()->json([
+           'statusCode' => 200,
+            'data' => [
+                'name'=> 'jad',
+                'age' => 20
+            ]
+        ]);
+    }
+
+
 
 }

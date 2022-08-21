@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('workers', function (Blueprint $table) {
             $table->uuid('id')->unique();
             $table->string('name')->unique();
+            $table->string('details');
             $table->timestamps();
         });
     }
