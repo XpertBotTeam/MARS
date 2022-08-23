@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     //
-    public function index(){
-    redirect('/');
-    }
+
     public function store(){
+
         $validated = \request()->validate([
             'email' => ['required',Rule::exists('users','email')],
             'password' => 'required'
@@ -25,6 +24,11 @@ class LoginController extends Controller
                 ]
             );
         }
+        return response()->json([
+                'statusCode'=> 201,
+                'message'=> 'Logged in failed',
+            ]
+        );
     }
     public function test(){
 
