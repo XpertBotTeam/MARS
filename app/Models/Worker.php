@@ -14,4 +14,7 @@ class Worker extends Model
         'details'
 
     ];
+    protected function service(){
+        return $this->belongsTo(Service::class);
+    }
 }
