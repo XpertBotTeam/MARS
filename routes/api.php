@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\AuthenticationController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ServiceRequestController;
 use App\Http\Controllers\ServicesController;
 use Illuminate\Http\Request;
@@ -28,4 +26,5 @@ Route::post('/register', [AuthenticationController::class, 'register']);
 
 Route::post('/login', [AuthenticationController::class, 'login']);
 
+Route::get('/services' ,[ServicesController::class,'showFeed']);
 

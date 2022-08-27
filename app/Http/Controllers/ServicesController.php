@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ServiceType;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ServicesController extends Controller
@@ -10,13 +10,13 @@ class ServicesController extends Controller
     //
     public function showFeed(){
 
-        $event= Ser::orderBy('id','DESC')->get();
+        $data= Service::all();
 
-        if (!$event){
+        if (!$data){
             return ['message'=> 'no events in the current time'];
         }
 
-        return $event;
+        return $data;
     }
 
     public function createEvent(Request $request){
