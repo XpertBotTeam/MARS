@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ServiceRequestController;
@@ -22,13 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('login',[ LoginController::class,'store']);
-Route::get('test',[ LoginController::class,'test']);
 
-Route::post('register',[ RegisterController::class,'store']);
+Route::post('/register', [AuthenticationController::class, 'register']);
 
-Route::get('services',[ServicesController::class,'index']);
-
-Route::post('service-request',[ServiceRequestController::class,'store']);
+Route::post('/login', [AuthenticationController::class, 'login']);
 
 
