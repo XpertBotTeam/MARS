@@ -18,7 +18,7 @@ class AuthenticationController extends Controller
                 'email' => 'required|email|unique:users',
                 'name' => 'required',
                 'age' => 'required|integer',
-                'password' => ['required', 'confirmed', Password::defaults()],
+                'password' => ['required'],
                 'gender'=>'required'
             ]);
         }catch (ValidationException $exception) {
