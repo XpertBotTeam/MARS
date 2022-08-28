@@ -9,7 +9,7 @@ class ProfileController extends Controller
 {
     //
     public function showProfile($id){
-        $data = User::where('id',$id);
+        $data = User::firstWhere('id',$id);
 
         return ['data' => $data];
     }
