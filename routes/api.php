@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceRequestController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\WorkerController;
@@ -36,3 +37,5 @@ Route::post('/create-worker',[WorkerController::class,'createWorker']);
 Route::get('/service/{id}',[ServicesController::class,'getService']);
 
 Route::get('/service/delete/{id}',[ServicesController::class,'destroy']);
+
+Route::get('/profile/{id}',[ProfileController::class,'showProfile']);
