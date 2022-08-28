@@ -32,3 +32,5 @@ Route::get('/services' ,[ServicesController::class,'showFeed']);
 Route::post('/create-service', [ServicesController::class, 'createService']);
 
 Route::post('/create-worker',[WorkerController::class,'createWorker']);
+
+Route::get('/service/{id}',[ServicesController::class,'getService']);

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::dropIfExists('workers');
         Schema::create('workers', function (Blueprint $table) {
             $table->uuid('id')->unique();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('details');
             $table->timestamps();
         });

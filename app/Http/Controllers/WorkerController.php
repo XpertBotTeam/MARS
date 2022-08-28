@@ -13,6 +13,7 @@ class WorkerController extends Controller
     public function createWorker(Request $request){
         try{
             $this->validate($request, [
+                'id' => 'required',
                 'name' => 'required',
                 'details' => 'required',
             ]);
@@ -20,7 +21,7 @@ class WorkerController extends Controller
             return['state'=>false, $exception->errors()];
         }
         $data = Worker::create([
-            'id'=>rand(1,10),
+            'id'=>$request->id,
             'name'=>$request->name,
             'details'=>$request->details,
         ]);

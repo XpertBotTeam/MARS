@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('service_requests', function (Blueprint $table) {
-            $table->id();
+            $table->id()->unique();
             $table->string('name');
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
