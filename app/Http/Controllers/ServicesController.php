@@ -43,4 +43,9 @@ class ServicesController extends Controller
 
         return ['service'=>$data];
     }
+    public function destroy($id){
+        Service::destroy($id);
+
+        return ['result'=>'successfully deleted'];
+    }
 }
