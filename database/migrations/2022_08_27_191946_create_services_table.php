@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('services');
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('worker_id')->constrained('workers');
+            $table->foreignId('worker_id');
             $table->timestamps();
         });
     }

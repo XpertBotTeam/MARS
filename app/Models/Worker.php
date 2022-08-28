@@ -11,7 +11,7 @@ class Worker extends Model
     protected $fillable = [
        'id',
        'name',
-        'details'
+       'details'
 
     ];
     protected function service(){

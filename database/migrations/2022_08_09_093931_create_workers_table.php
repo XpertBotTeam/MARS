@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('workers');
         Schema::create('workers', function (Blueprint $table) {
             $table->uuid('id')->unique();
-            $table->string('name')->unique();
+            $table->string('name');
             $table->string('details');
             $table->timestamps();
         });

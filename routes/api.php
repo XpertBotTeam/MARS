@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ServiceRequestController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\WorkerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +29,6 @@ Route::post('/login', [AuthenticationController::class, 'login']);
 
 Route::get('/services' ,[ServicesController::class,'showFeed']);
 
+Route::post('/create-service', [ServicesController::class, 'createService']);
+
+Route::post('/create-worker',[WorkerController::class,'createWorker']);
