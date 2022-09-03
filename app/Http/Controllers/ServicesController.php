@@ -25,7 +25,8 @@ class ServicesController extends Controller
             $this->validate($request, [
                 'name' => 'required',
                 'worker_id' => 'required',
-                'price' => 'required'
+                'price' => 'required',
+                'imageUrl' => 'required'
             ]);
         }catch (ValidationException $exception) {
             return['state'=>false, $exception->errors()];
@@ -33,7 +34,8 @@ class ServicesController extends Controller
         $data = Service::create([
             'name'=>$request->name,
             'worker_id'=>$request->worker_id,
-            'price'=>$request->price
+            'price'=>$request->price,
+            'imageUrl'=>$request->imageUrl
         ])->get()->last();
 
         return ['state'=>true,'message'=> 'successful creation!'];
