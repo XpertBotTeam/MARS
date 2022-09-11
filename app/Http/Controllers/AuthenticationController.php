@@ -29,6 +29,7 @@ class AuthenticationController extends Controller
         $user=User::create([
             'email'=>$request->email,
             'name'=>$request->name,
+            'phone'=>$request->phone,
             'password'=> Hash::make($request->password),
             'age'=>$request->age,
 
