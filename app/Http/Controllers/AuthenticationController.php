@@ -31,7 +31,6 @@ class AuthenticationController extends Controller
             'name'=>$request->name,
             'password'=> Hash::make($request->password),
             'age'=>$request->age,
-            'gender'=>$request->gender,
 
         ]);
         $response = collect(['accepted' => true]);

@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('age');
-            $table->string('gender');
             $table->string('interests')->nullable();
             $table->rememberToken();
             $table->timestamps();
